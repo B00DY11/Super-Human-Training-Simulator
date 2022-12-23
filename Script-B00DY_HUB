@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Autoclicker GUI", HidePremium = false, IntroText = "Autoclicker GUI", SaveConfig = true, ConfigFolder = "AutoclickerConfig"})
+local Window = OrionLib:MakeWindow({Name = "Super Human Training Simulator GUI", HidePremium = false, IntroText = "Super Human TRaining Simulator GUI", SaveConfig = true, ConfigFolder = "AutoclickerConfig"})
 
 _G.trainStrength = true
 _G.trainEndurance = true
