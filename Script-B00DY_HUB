@@ -1,0 +1,102 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Autoclicker GUI", HidePremium = false, IntroText = "Autoclicker GUI", SaveConfig = true, ConfigFolder = "AutoclickerConfig"})
+
+_G.trainStrength = true
+_G.trainEndurance = true
+_G.trainPsychic = true
+_G.trainAgility = true
+
+function trainStrength()
+    while _G.trainStrength == true do 
+        local args = {
+    [1] = "strength"
+}
+
+game:GetService("ReplicatedStorage").remotes.train:FireServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+
+
+function trainEndurance()
+    while _G.trainEndurance == true do
+        local args = {
+    [1] = "endurance"
+}
+
+game:GetService("ReplicatedStorage").remotes.train:FireServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+
+function trainPsychic()
+    while _G.trainPsychic == true do 
+        local args = {
+    [1] = "psychic"
+}
+
+game:GetService("ReplicatedStorage").remotes.train:FireServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+
+function trainAgility()
+    while _G.trainAgility == true do 
+        local args = {
+    [1] = "agility"
+}
+
+game:GetService("ReplicatedStorage").remotes.train:FireServer(unpack(args))
+wait(.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+end
+end
+
+
+local FarmTab = Window:MakeTab({
+	Name = "Auto Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+FarmTab:AddToggle({
+	Name = "Train Strength!",
+	Default = false,
+	Callback = function(Value)
+		_G.trainStrength = Value
+		trainStrength()
+	end    
+})
+
+
+FarmTab:AddToggle({
+	Name = "Train Endurance!",
+	Default = false,
+	Callback = function(Value)
+		_G.trainEndurance = Value
+		trainEndurance()
+	end    
+})
+
+
+FarmTab:AddToggle({
+	Name = "Train Psychic!",
+	Default = false,
+	Callback = function(Value)
+		_G.trainPsychic = Value
+		trainPsychic()
+	end    
+})
+
+
+FarmTab:AddToggle({
+	Name = "Train Agility!",
+	Default = false,
+	Callback = function(Value)
+		_G.trainAgility = Value
+		trainAgility()
+	end    
+})
+
+
+OrionLib:Init()
